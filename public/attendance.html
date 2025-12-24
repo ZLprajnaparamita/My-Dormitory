@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Data | Helpdesk Portal</title>
+    <link rel="stylesheet" href="/css/helpdesk.css">
+    <script defer src="/js/attendance.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <button class="back-btn" onclick="window.location.href='/helpdesk.html'">Back</button>
+            <h1>Attendance Data</h1>
+        </header>
+
+        <!-- Search and Filter Section -->
+        <div class="search">
+            <input id="searchInput" type="text" placeholder="Search by name or room...">
+            <button class="filter-btn">Filters</button>
+        </div>
+
+        <!-- Attendance Records -->
+        <section id="attendanceList" class="records">
+            <div class="record">
+                <h3>Sarah Johnson</h3>
+                <p>Room A-205</p>
+                <p>Time: 08:30 AM</p>
+                <span class="status present">Present</span>
+            </div>
+            <div class="record">
+                <h3>Michael Chen</h3>
+                <p>Room A-304</p>
+                <p>Time: 08:25 AM</p>
+                <span class="status present">Present</span>
+            </div>
+            <div class="record">
+                <h3>Emily Rodriguez</h3>
+                <p>Room B-101</p>
+                <p>Time: -</p>
+                <span class="status absent">Absent</span>
+            </div>
+            <div class="record">
+                <h3>David Kim</h3>
+                <p>Room B-203</p>
+                <p>Time: 08:45 AM</p>
+                <span class="status late">Late</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpdesk Portal | MyDormitory</title>
+    <link rel="stylesheet" href="/css/helpdesk.css">
+    <script src="/js/logout.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Full-width Header -->
+        <header class="header">
+            <h1>Helpdesk Portal</h1>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </header>
+
+        <!-- Info Section -->
+        <section class="info">
+            <div class="card">
+                <h3>Attendance Today</h3>
+                <p class="large">156</p>
+                <p>out of 180</p>
+            </div>
+            <div class="card">
+                <h3>Issues Detected</h3>
+                <p class="large warning">8</p>
+                <p>pending review</p>
+            </div>
+        </section>
+
+        <!-- Actions Section -->
+        <div class="actions">
+            <button onclick="window.location.href='/attendance.html'" class="action-btn">
+                Attendance Data
+                <p>View all resident attendance</p>
+            </button>
+            <button onclick="window.location.href='/report.html'" class="action-btn">
+                Report to Admin
+                <p>Submit attendance issues</p>
+            </button>
+            <button onclick="window.location.href='/issues.html'" class="action-btn">
+                Attendance Issue Reports
+                <p>Review submitted issues</p>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

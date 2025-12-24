@@ -1,0 +1,117 @@
+/* General body styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Full container for desktop */
+.container {
+    max-width: 1000px; /* Center content */
+    margin: auto;
+    padding: 20px;
+}
+
+/* Full-width header styles */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7c4dff; /* Bright purple header */
+    color: white;
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+.logout-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #7c4dff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.logout-btn:hover {
+    background-color: white;
+}
+
+/* Info Section */
+.info {
+    display: flex; /* Horizontal layout for cards */
+    justify-content: space-between;
+    gap: 20px; /* Spacing between cards */
+    margin: 20px 0;
+}
+
+.card {
+    flex: 1; /* Equal width */
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+.card h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+.card p.large {
+    font-size: 32px;
+    color: #7c4dff; /* Bright purple highlights */
+    margin: 10px 0;
+}
+.card p.warning {
+    color: #ff5c5c; /* Warning color for issues */
+}
+
+/* Actions Section */
+.actions {
+    display: flex;
+    flex-direction: column; /* Column layout for buttons */
+    gap: 15px; /* Spacing between buttons */
+}
+.action-btn {
+    display: block;
+    background-color: white; /* White button background */
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+    cursor: pointer;
+    font-size: 18px;
+    margin: 5px 0;
+}
+.action-btn:hover {
+    background-color: #f5f5f5; /* Subtle hover effect */
+}
+.action-btn p {
+    margin-top: 5px;
+    color: gray;
+    font-size: 14px;
+}
+
+/* Bottom navigation (hidden on desktop) */
+.nav {
+    display: none;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    .info {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 10px;
+    }
+    .card {
+        flex: none; /* Ensure cards adjust size on smaller screens */
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "my-dormitory",
+  "version": "1.0.0",
+  "description": "My-Dormitory app for attendance management",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.4",
+    "dotenv": "^16.6.1",
+    "ejs": "^3.1.10",
+    "express": "^4.22.1",
+    "express-session": "^1.18.2",
+    "mysql2": "^3.16.0",
+    "sqlite3": "^5.1.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZLprajnaparamita/My-Dormitory.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ZLprajnaparamita/My-Dormitory/issues"
+  },
+  "homepage": "https://github.com/ZLprajnaparamita/My-Dormitory#readme"
+}

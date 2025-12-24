@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Issue Reports | Helpdesk Portal</title>
+    <link rel="stylesheet" href="/css/helpdesk.css">
+    <script defer src="/js/issues.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <button class="back-btn" onclick="window.location.href='/helpdesk.html'">Back</button>
+            <h1>Attendance Issue Reports</h1>
+        </header>
+
+        <!-- Issues List -->
+        <section id="issuesList" class="issues">
+            <div class="issue" data-resident-name="Sarah Johnson" data-room="A-205" data-type="Attendance Not Recorded"
+                data-incident-date="12/15/2024" data-status="In Progress"
+                data-description="Scanned QR code at 8:30 AM but attendance not showing in the system." onclick="loadDetails(this)">
+                <h3>Sarah Johnson</h3>
+                <p>Room A-205</p>
+                <p>Attendance Not Recorded</p>
+                <span class="status in-progress">In Progress</span>
+                <p class="date">12/15/2024</p>
+            </div>
+            <div class="issue" data-resident-name="David Kim" data-room="B-203" data-type="QR Code Not Working"
+                data-incident-date="12/14/2024" data-status="Submitted"
+                data-description="Resident reported QR code issue preventing attendance submission." onclick="loadDetails(this)">
+                <h3>David Kim</h3>
+                <p>Room B-203</p>
+                <p>QR Code Not Working</p>
+                <span class="status submitted">Submitted</span>
+                <p class="date">12/14/2024</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
