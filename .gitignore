@@ -9,8 +9,8 @@ database.sqlite
 database.sqlite-shm
 database.sqlite-wal
 
-# Environment files (should be template only)
-# .env
+# Environment files - DO NOT commit .env with secrets
+.env
 
 # Build artifacts
 build/
