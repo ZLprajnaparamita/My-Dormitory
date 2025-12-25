@@ -10,7 +10,7 @@ function logout() {
                 // Clear both sessionStorage and localStorage for security
                 sessionStorage.clear();
                 localStorage.clear();
-                window.location.href = '/login.html'; // Redirect after logout
+                window.location.href = '/login'; // Redirect after logout
             } else {
                 console.error('Failed to log out:', response.statusText);
                 alert('Logout failed. Please try again.');
