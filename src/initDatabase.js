@@ -1,9 +1,4 @@
-const sqlite3 = require('sqlite3').verbose();
-const path = require('path');
-
-// Connect to SQLite database file
-const dbPath = path.resolve(__dirname, '../database.sqlite');
-const db = new sqlite3.Database(dbPath);
+const db = require('./db');
 
 // Create Users table and insert test data
 db.serialize(() => {
@@ -18,6 +13,11 @@ db.serialize(() => {
         )
     `);
 
+    // Create index on email column for faster login queries
+    db.run(`
+        CREATE INDEX IF NOT EXISTS idx_users_email ON users(email)
+    `);
+
     db.run(`
         INSERT OR IGNORE INTO users (email, password, role) VALUES
         ('helpdesk@dorm.edu', 'password', 'helpdesk'),
@@ -27,6 +27,3 @@ db.serialize(() => {
 
     console.log('Database initialization complete.');
 });
-
-// Close the database connection
-db.close();

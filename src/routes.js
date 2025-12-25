@@ -70,9 +70,7 @@ router.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/admin.html'));
 });
 
-const express = require('express');
-const router = express.Router();
-
+// Logout API
 router.post('/api/logout', (req, res) => {
     if (req.session) {
         req.session.destroy((err) => {
@@ -85,6 +83,5 @@ router.post('/api/logout', (req, res) => {
         return res.status(200).json({ message: 'No active session found.' });
     }
 });
-
 
 module.exports = router;
