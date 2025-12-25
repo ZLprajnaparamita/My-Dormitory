@@ -28,6 +28,23 @@ body {
     font-size: 28px;
     margin: 0;
 }
+
+/* Back Button */
+.back-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #7c4dff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.back-btn:hover {
+    background-color: white;
+}
+
+/* Logout Button */
 .logout-btn {
     background-color: rgba(255, 255, 255, 0.8);
     color: #7c4dff;
@@ -36,6 +53,7 @@ body {
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 .logout-btn:hover {
     background-color: white;
@@ -113,5 +131,240 @@ body {
     }
     .card {
         flex: none; /* Ensure cards adjust size on smaller screens */
+    }
+    .header h1 {
+        font-size: 20px;
+    }
+    .back-btn, .logout-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Report Form Styles */
+.report-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.report-form label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.report-form input,
+.report-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.report-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #7c4dff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #6a3de8;
+}
+
+/* Attendance Records Styles */
+.search {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.search input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.filter-btn {
+    background-color: #7c4dff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #6a3de8;
+}
+
+.records {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.record {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.record h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.record p {
+    margin: 3px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.status.present {
+    background-color: #4caf50;
+    color: white;
+}
+
+.status.absent {
+    background-color: #ff5c5c;
+    color: white;
+}
+
+.status.late {
+    background-color: #ff9800;
+    color: white;
+}
+
+/* Issues List Styles */
+.issues {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.issue {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.issue:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.issue h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.issue p {
+    margin: 3px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.issue .date {
+    color: #999;
+    font-size: 12px;
+}
+
+.status.in-progress {
+    background-color: #2196f3;
+    color: white;
+}
+
+.status.submitted {
+    background-color: #ff9800;
+    color: white;
+}
+
+/* Report Details Styles */
+.report-details {
+    margin-top: 20px;
+}
+
+.detail-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.detail-card h2 {
+    margin: 0 0 20px 0;
+    color: #7c4dff;
+    font-size: 24px;
+}
+
+.detail-row {
+    margin: 15px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #333;
+    min-width: 120px;
+}
+
+.detail-value {
+    color: #666;
+}
+
+.detail-description {
+    margin-top: 5px;
+    color: #666;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 600px) {
+    .detail-row {
+        flex-direction: column;
+    }
+    
+    .detail-label {
+        min-width: auto;
     }
 }

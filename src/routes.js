@@ -3,6 +3,24 @@ const path = require('path');
 const db = require('./db'); // SQLite database connection
 const router = express.Router();
 
+// Middleware to check authentication
+function requireAuth(req, res, next) {
+    if (!req.session || !req.session.user) {
+        return res.redirect('/login');
+    }
+    next();
+}
+
+// Middleware to check role
+function requireRole(role) {
+    return (req, res, next) => {
+        if (!req.session || !req.session.user || req.session.user.role !== role) {
+            return res.redirect('/login');
+        }
+        next();
+    };
+}
+
 // Default Homepage
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
@@ -39,6 +57,7 @@ router.post('/login', (req, res) => {
         }
 
         // Redirect based on role
+        req.session.user = { email: user.email, role: user.role };
         switch (user.role) {
             case 'helpdesk':
                 res.redirect('/helpdesk');
@@ -60,31 +79,29 @@ router.get('/resident-info', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/resident_info.html'));
 });
 
-// Helpdesk Dashboard
-router.get('/helpdesk', (req, res) => {
+// Helpdesk Dashboard (protected route)
+router.get('/helpdesk', requireRole('helpdesk'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/helpdesk.html'));
 });
 
-// Admin Dashboard
-router.get('/admin', (req, res) => {
+// Admin Dashboard (protected route)
+router.get('/admin', requireRole('admin'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/admin.html'));
 });
 
-const express = require('express');
-const router = express.Router();
-
+// Logout API endpoint
 router.post('/api/logout', (req, res) => {
     if (req.session) {
         req.session.destroy((err) => {
             if (err) {
                 return res.status(500).json({ message: 'Logout failed.' });
             }
+            res.clearCookie('connect.sid'); // Clear session cookie
             return res.status(200).json({ message: 'Logged out successfully.' });
         });
     } else {
         return res.status(200).json({ message: 'No active session found.' });
     }
 });
-
 
 module.exports = router;
